@@ -1,0 +1,17 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+module:testrunner
+
+GET     /plates/:plate/blocked                  Plates.Blocked
+GET     /plates/:plate/blocking                 Plates.Blocking
+
+*    /notify/:employeeId/blocking               Notify.Blocking
+*    /notify/:employeeId/blocked                Notify.Blocked
+
+# Ignore favicon requests
+GET     /favicon.ico                            404
+
+# Catch all
+*       /:controller/:action                    Application.Wildcard
